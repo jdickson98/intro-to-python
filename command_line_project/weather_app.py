@@ -1,4 +1,4 @@
-import requests
+import requests #importing of a library that processes the http requests
 
 def get_weather_data(api_key, location): #defined a function
   url = f"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric"
