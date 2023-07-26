@@ -21,7 +21,7 @@ Before running the script, you need to have the following:
 
 4. The script will ask for the name of a city.
 
-5.  Et voila, current weather for the location is provided
+5.  Et voila, current weather for the location is provided BOSH
 
 ## API Key
 

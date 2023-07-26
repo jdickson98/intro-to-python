@@ -9,7 +9,7 @@ def get_weather_data(api_key, location): #defined a function
 
 def show_my_weather(data):
   if data: # use of an if/else function
-    print("Weather for", data["name"], "(" + data["sys"]["country"] + "):")
+    print("Weather for", data["name"])
     print("Temperature:", data["main"]["temp"], "°C"),
     print("Condition:", data["weather"][0]["description"]) #index is used to access the first element (dictionary) in the list, which holds details about the current weather conditions.
     print("Humidity:", data["main"]["humidity"], "%")
@@ -19,10 +19,18 @@ def show_my_weather(data):
 
 def main():
   api_key = "90966a4a510aeec452b7b2229314fe67" #got the API key from the openweathermap.com website
-  city = input("Where do you want to know the weather for, even though you're definitely not there?\n")
+  lets_go = True #variable
 
-  data = get_weather_data(api_key, city)
-  show_my_weather(data)
+  #while loop
+  while lets_go:
+    city = input("Where do you want to know the weather for, even though you're definitely not there?\n")
+
+    data = get_weather_data(api_key, city)
+    show_my_weather(data)
+
+    choice = input("Do you wish you were somewhere else? (obviously/surprisingly no): ")
+    if choice.lower() != "obviously":
+      lets_go = False
 
 if __name__ == "__main__":
   main()
